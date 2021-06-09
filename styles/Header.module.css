@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  font-weight: 600;
+  height: 60px;
+}
+
+.logo {
+  font-size: 40px;
+  color: #009b91;
+}
+
+.menu_links {
+  height: 100%;
+}
+
+.menu_links ul {
+  height: 100%;
+}
+
+.menu_links ul li {
+  height: 100%;
+  display: inline-block;
+  padding: 40px 20px 0 20px;
+}
+
+.menu_links ul li:hover {
+  color: #fff;
+  background: #333;
+}
+
+.user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile_img {
+  border-radius: 50%;
+}
+
+.profile_text {
+  padding-left: 10px;
+  font-size: 20px;
+}

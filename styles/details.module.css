@@ -1,0 +1,69 @@
+.title {
+  text-align: center;
+  padding: 10px;
+}
+.title span {
+  color: #009b91;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 20px;
+  /* overflow-y: scroll; */
+}
+
+.card .petContainer {
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #999;
+  box-shadow: 0 10px 5px -7px var(--secondary-color);
+  cursor: pointer;
+}
+
+.card .petContainer .petImage {
+  border-radius: 50%;
+}
+
+.card .petContainer p {
+  font-size: 20px;
+  padding: 10px;
+  flex: 1;
+}
+
+.card label {
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.card input {
+  border: none;
+  font-size: 15px;
+}
+
+.card textarea {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card textarea:focus {
+  outline: none;
+}
+
+.card .date,
+.card .time,
+.card .reason {
+  padding: 10px;
+}
+
+.card .reason {
+  display: flex;
+  flex-direction: column;
+}

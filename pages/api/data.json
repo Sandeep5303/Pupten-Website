@@ -1,0 +1,48 @@
+{
+  "pets": [
+    {
+      "id": "1",
+      "name": "Happy",
+      "type": "Dog",
+      "imgUrl": "/img/user_pets/pet1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Bruno",
+      "type": "Dog",
+      "imgUrl": "/img/user_pets/pet2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Jhonny",
+      "type": "Guinea Pig",
+      "imgUrl": "/img/user_pets/pet3.jpg"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "1",
+      "name": "Dr. John Doe",
+      "degree": "Bachelor in Veterinary Science (BVS)",
+      "exp": "10 years experience",
+      "location": "Park Street, New York",
+      "imgUrl": "/img/doctor/doc1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Dr. Simon",
+      "degree": "Bachelor in Veterinary Science (BVS)",
+      "exp": "10 years experience",
+      "location": "Park Street, New York",
+      "imgUrl": "/img/doctor/doc2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Dr. Lizzy Alex",
+      "degree": "Bachelor in Veterinary Science (BVS)",
+      "exp": "10 years experience",
+      "location": "Park Street, New York",
+      "imgUrl": "/img/doctor/doc3.jpg"
+    }
+  ]
+}

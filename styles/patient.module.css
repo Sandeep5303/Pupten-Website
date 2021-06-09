@@ -1,0 +1,44 @@
+.title {
+  text-align: center;
+  padding: 10px;
+}
+.title span {
+  color: #009b91;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 20px;
+  /* overflow-y: scroll; */
+}
+
+.card .petContainer {
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #999;
+  box-shadow: 0 10px 5px -7px var(--primary-color);
+  cursor: pointer;
+}
+
+.card .petContainer.selected {
+  border-color: var(--secondary-color);
+  box-shadow: 0 10px 5px -7px var(--secondary-color);
+}
+
+.card .petContainer .petImage {
+  border-radius: 50%;
+}
+
+.card .petContainer p {
+  font-size: 20px;
+  padding: 10px;
+  flex: 1;
+}

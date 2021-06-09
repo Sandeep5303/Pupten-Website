@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+  padding: 10px;
+}
+
+.title span {
+  color: #009b91;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 20px;
+  /* overflow-y: scroll; */
+}
+
+.card p {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.card .date {
+  width: 500px;
+  padding: 10px;
+}
+
+.card input[type='radio'] {
+  margin-right: 5px;
+}
+
+.card .time {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
