@@ -47,8 +47,8 @@
 
 .paw {
   position: absolute;
-  top: 65%;
-  left: 26%;
+  top: 67%;
+  left: 25%;
 }
 
 .parallax {
@@ -73,24 +73,24 @@
 
 .parallax .layer:nth-child(2) {
   position: absolute;
-  top: 700px !important;
+  top: 650px !important;
   left: 700px !important;
 }
 
 .parallax .layer:nth-child(3) {
   position: absolute;
   top: 250px !important;
-  left: 1400px !important;
+  left: 1300px !important;
 }
 
 .parallax .layer:nth-child(4) {
   position: absolute;
   top: 500px !important;
-  left: 1400px !important;
+  left: 1300px !important;
 }
 
 .parallax .layer:nth-child(5) {
   position: absolute;
-  top: 500px !important;
+  top: 400px !important;
   left: 300px !important;
 }
