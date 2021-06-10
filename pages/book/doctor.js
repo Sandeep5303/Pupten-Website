@@ -1,35 +1,22 @@
 import Layout from '@components/Layout';
+import Doctor from '@components/Doctor';
+import Spinner from '@components/Spinner';
 import styles from '@styles/doctor.module.css';
 
-import Image from 'next/image';
 import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { getDoctors, setCurrent } from '@actions/puptenActions';
 
-export default function find() {
-  const doctors = {
-    doc1: {
-      name: 'Dr. John Doe',
-      degree: 'Bachelor in Veterinary Science (BVS)',
-      exp: '10 years experience',
-      location: 'Park Street, New York',
-      imgUrl: '/img/doctor/doc1.jpg',
-    },
-
-    doc2: {
-      name: 'Dr. Simon',
-      degree: 'Bachelor in Veterinary Science (BVS)',
-      exp: '10 years experience',
-      location: 'Park Street, New York',
-      imgUrl: '/img/doctor/doc2.jpg',
-    },
-
-    doc3: {
-      name: 'Dr. Lizzy Alex',
-      degree: 'Bachelor in Veterinary Science (BVS)',
-      exp: '10 years experience',
-      location: 'Park Street, New York',
-      imgUrl: '/img/doctor/doc3.jpg',
-    },
+const doctors = ({ pupten: { doctors, loading }, getDoctors, setCurrent }) => {
+  const [select, setSelect] = useState();
+  const currentDoc = { doc: doctors && doctors[select] };
+  const setDoc = () => {
+    setCurrent(currentDoc);
   };
+  useEffect(() => {
+    getDoctors();
+  }, []);
   return (
     <Layout title='Book'>
       <div className={styles.header}>
@@ -44,67 +31,28 @@ export default function find() {
         </select>
       </div>
       <div className={styles.card}>
-        <div className={`${styles.docContainer} ${styles.selected}`}>
-          <Image
-            className={styles.docImage}
-            src={doctors.doc1.imgUrl}
-            height='100px'
-            width='100px'
-          ></Image>
-          <p>
-            <span>{doctors.doc1.name}</span>
-            <br></br>
-            {doctors.doc1.degree}
-            <br></br>
-            {doctors.doc1.exp}
-            <br></br>
-            {doctors.doc1.location}
-            <br></br>
-          </p>
-          <button className='btn btn-dark'>More Info</button>
-        </div>
-        <div className={styles.docContainer}>
-          <Image
-            className={styles.docImage}
-            src={doctors.doc2.imgUrl}
-            height='100px'
-            width='100px'
-          ></Image>
-          <p>
-            <span>{doctors.doc2.name}</span>
-            <br></br>
-            {doctors.doc2.degree}
-            <br></br>
-            {doctors.doc2.exp}
-            <br></br>
-            {doctors.doc2.location}
-            <br></br>
-          </p>
-          <button className='btn btn-dark'>More Info</button>
-        </div>
-        <div className={styles.docContainer}>
-          <Image
-            className={styles.docImage}
-            src={doctors.doc3.imgUrl}
-            height='100px'
-            width='100px'
-          ></Image>
-          <p>
-            <span>{doctors.doc3.name}</span>
-            <br></br>
-            {doctors.doc3.degree}
-            <br></br>
-            {doctors.doc3.exp}
-            <br></br>
-            {doctors.doc3.location}
-            <br></br>
-          </p>
-          <button className='btn btn-dark'>More Info</button>
-        </div>
+        {loading && <Spinner />}
+        {doctors &&
+          doctors.map((doctor, i) => (
+            <Doctor
+              doctor={doctor}
+              key={i}
+              active={i === select}
+              onClick={() => setSelect(i)}
+            />
+          ))}
       </div>
       <Link href='/book/appointment'>
-        <a className='btn btn-dark'>Book</a>
+        <a className='btn btn-dark' onClick={() => setDoc()}>
+          Book
+        </a>
       </Link>
     </Layout>
   );
-}
+};
+
+const mapStateToProps = state => ({
+  pupten: state.pupten,
+});
+
+export default connect(mapStateToProps, { getDoctors, setCurrent })(doctors);

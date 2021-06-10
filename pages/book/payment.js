@@ -3,14 +3,24 @@ import styles from '@styles/payment.module.css';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { connect } from 'react-redux';
 
-export default function payment() {
-  const current = {
-    doc: 'Dr. John Doe',
-    docImgUrl: '/img/doctor/doc1.jpg',
-    patient: 'Bruno',
-    date: 'Friday, 19 March 2021, 10:30am',
+const payment = ({ pupten: { current } }) => {
+  // generate random payment price
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * (1000 - 300 + 1) + 300);
   };
+  const {
+    0: { pet },
+    1: { doc },
+    2: { date, time },
+  } = { ...current };
+  // const current = {
+  //   doc: 'Dr. John Doe',
+  //   docImgUrl: '/img/doctor/doc1.jpg',
+  //   patient: 'Bruno',
+  //   date: 'Friday, 19 March 2021, 10:30am',
+  // };
   return (
     <Layout title='Payment'>
       <div className={styles.card}>
@@ -18,17 +28,19 @@ export default function payment() {
           <div className={styles.docContainer}>
             <Image
               className={styles.docImage}
-              src={current.docImgUrl}
+              src={doc.imgUrl}
               height='100px'
               width='100px'
             ></Image>
-            <p>{current.doc}</p>
+            <p>{doc.name}</p>
           </div>
-          <p>{current.patient}</p>
-          <span>{current.date}</span>
+          <p>{pet.name}</p>
+          <span>
+            {date} {time}
+          </span>
           <div className={styles.amount}>
             <p>Amount to pay</p>
-            <p>Rs 700/-</p>
+            <p>Rs {generateRandomNumber()}/-</p>
           </div>
         </div>
       </div>
@@ -37,4 +49,10 @@ export default function payment() {
       </Link>
     </Layout>
   );
-}
+};
+
+const mapStateToProps = state => ({
+  pupten: state.pupten,
+});
+
+export default connect(mapStateToProps)(payment);

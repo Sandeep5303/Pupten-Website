@@ -3,15 +3,13 @@ import styles from '@styles/details.module.css';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { connect } from 'react-redux';
 
-export default function details() {
-  const userPets = {
-    pet1: {
-      name: 'Happy',
-      type: 'Dog',
-      imgUrl: '/img/user_pets/pet1.jpg',
-    },
-  };
+const details = ({ pupten: { current } }) => {
+  const {
+    0: { pet },
+    2: { date, time },
+  } = { ...current };
   return (
     <Layout title='Payment'>
       <h1 className={styles.title}>
@@ -21,33 +19,21 @@ export default function details() {
         <div className={styles.petContainer}>
           <Image
             className={styles.petImage}
-            src={userPets.pet1.imgUrl}
+            src={pet.imgUrl}
             height='100px'
             width='100px'
           ></Image>
           <p>
-            {userPets.pet1.name} ({userPets.pet1.type})
+            {pet.name} ({pet.type})
           </p>
         </div>
         <div className={styles.date}>
           <label htmlFor='date'>Date:</label>
-          <input
-            type='date'
-            name='date'
-            id='date'
-            value='2020-10-20'
-            disabled
-          />
+          <p>{date}</p>
         </div>
         <div className={styles.time}>
           <label htmlFor='time'>Time:</label>
-          <input
-            type='datetime'
-            name='time'
-            id='time'
-            value='10:10 AM'
-            disabled
-          />
+          <p>{time}</p>
         </div>
         <div className={styles.reason}>
           <label htmlFor='reason'>Reason:</label>
@@ -59,4 +45,10 @@ export default function details() {
       </Link>
     </Layout>
   );
-}
+};
+
+const mapStateToProps = state => ({
+  pupten: state.pupten,
+});
+
+export default connect(mapStateToProps)(details);
