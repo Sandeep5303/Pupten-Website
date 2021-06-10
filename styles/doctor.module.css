@@ -49,18 +49,22 @@
   box-shadow: 0 10px 5px -7px var(--secondary-color);
 }
 
+.card .docContainer:hover {
+  box-shadow: 0 10px 5px -7px var(--secondary-color);
+}
+
 .card .docContainer .docImage {
   border-radius: 50%;
 }
 
 .card .docContainer p {
+  padding-left: 5px;
   font-size: 20px;
   font-weight: 500;
 }
 
 .card .docContainer p span {
   font-size: 15px;
-  padding: 10px;
   flex: 1;
 }
 

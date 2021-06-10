@@ -33,6 +33,10 @@
   box-shadow: 0 10px 5px -7px var(--secondary-color);
 }
 
+.card .petContainer:hover {
+  box-shadow: 0 10px 5px -7px var(--secondary-color);
+}
+
 .card .petContainer .petImage {
   border-radius: 50%;
 }
