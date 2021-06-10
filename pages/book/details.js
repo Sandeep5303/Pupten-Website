@@ -6,10 +6,13 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 
 const details = ({ pupten: { current } }) => {
+  if (current.length === 0) return null;
+
   const {
     0: { pet },
     2: { date, time },
   } = { ...current };
+
   return (
     <Layout title='Payment'>
       <h1 className={styles.title}>
@@ -40,6 +43,7 @@ const details = ({ pupten: { current } }) => {
           <textarea name='reason' id='reason' rows='8'></textarea>
         </div>
       </div>
+
       <Link href='/book/payment'>
         <a className='btn btn-dark'>Proceed</a>
       </Link>

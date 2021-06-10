@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 
 const payment = ({ pupten: { current } }) => {
+  if (current.length === 0) return null;
   // generate random payment price
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * (1000 - 300 + 1) + 300);
