@@ -15,12 +15,6 @@ const payment = ({ pupten: { current } }) => {
     1: { doc },
     2: { date, time },
   } = { ...current };
-  // const current = {
-  //   doc: 'Dr. John Doe',
-  //   docImgUrl: '/img/doctor/doc1.jpg',
-  //   patient: 'Bruno',
-  //   date: 'Friday, 19 March 2021, 10:30am',
-  // };
   return (
     <Layout title='Payment'>
       <div className={styles.card}>
@@ -28,15 +22,15 @@ const payment = ({ pupten: { current } }) => {
           <div className={styles.docContainer}>
             <Image
               className={styles.docImage}
-              src={doc.imgUrl}
+              src={doc && doc.imgUrl}
               height='100px'
               width='100px'
             ></Image>
-            <p>{doc.name}</p>
+            <p>{doc && doc.name}</p>
           </div>
-          <p>{pet.name}</p>
+          <p>{pet && pet.name}</p>
           <span>
-            {date} {time}
+            {date && date} {time && time}
           </span>
           <div className={styles.amount}>
             <p>Amount to pay</p>
