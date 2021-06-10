@@ -1,7 +1,7 @@
 .content {
   position: absolute;
-  top: 50%;
-  left: 45%;
+  top: 45%;
+  left: 40%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
@@ -27,8 +27,8 @@
 
 .pets {
   position: absolute;
-  top: 30%;
-  left: 48%;
+  top: 22%;
+  left: 44%;
   z-index: -2;
   animation: float 4s ease-in-out infinite;
 }
@@ -47,8 +47,8 @@
 
 .paw {
   position: absolute;
-  top: 67%;
-  left: 25%;
+  top: 63%;
+  left: 20%;
 }
 
 .parallax {
@@ -73,8 +73,8 @@
 
 .parallax .layer:nth-child(2) {
   position: absolute;
-  top: 650px !important;
-  left: 700px !important;
+  top: 600px !important;
+  left: 600px !important;
 }
 
 .parallax .layer:nth-child(3) {
@@ -86,11 +86,74 @@
 .parallax .layer:nth-child(4) {
   position: absolute;
   top: 500px !important;
-  left: 1300px !important;
+  left: 1200px !important;
 }
 
 .parallax .layer:nth-child(5) {
   position: absolute;
   top: 400px !important;
-  left: 300px !important;
+  left: 200px !important;
+}
+
+@media (max-height: 582px) {
+  .paw {
+    position: absolute;
+    top: 68%;
+    left: 15%;
+  }
+
+  .pets {
+    top: 15%;
+    left: 44%;
+  }
+  .parallax .layer:nth-child(1) {
+    position: absolute;
+    top: 90px !important;
+    left: 600px !important;
+  }
+
+  .parallax .layer:nth-child(2) {
+    visibility: hidden;
+  }
+
+  .parallax .layer:nth-child(3) {
+    position: absolute;
+    top: 250px !important;
+    left: 1100px !important;
+  }
+
+  .parallax .layer:nth-child(4) {
+    visibility: hidden;
+  }
+
+  .parallax .layer:nth-child(5) {
+    position: absolute;
+    top: 400px !important;
+    left: 500px !important;
+  }
+}
+
+@media (max-width: 376px) {
+  .pets {
+    display: none;
+  }
+  .paw {
+    display: none;
+  }
+  .parallax {
+    display: none;
+  }
+  .tagline {
+    text-orientation: sideways-right;
+    font-size: 40px;
+  }
+  .content {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    justify-content: center;
+    /* align-items: center; */
+  }
 }

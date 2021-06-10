@@ -1,6 +1,7 @@
 import Layout from '@components/Layout';
 import styles from '@styles/payment.module.css';
 
+import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
 import { connect } from 'react-redux';
@@ -23,15 +24,15 @@ const payment = ({ pupten: { current } }) => {
           <div className={styles.docContainer}>
             <Image
               className={styles.docImage}
-              src={doc && doc.imgUrl}
+              src={doc.imgUrl}
               height='100px'
               width='100px'
             ></Image>
-            <p>{doc && doc.name}</p>
+            <p>{doc.name}</p>
           </div>
-          <p>{pet && pet.name}</p>
+          <p>{pet.name}</p>
           <span>
-            {date && date} {time && time}
+            {moment(date).format('dddd, MMMM Do YYYY')} {time}
           </span>
           <div className={styles.amount}>
             <p>Amount to pay</p>

@@ -69,3 +69,22 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-height: 582px) {
+  .card {
+    height: 350px;
+  }
+
+  .card .petContainer {
+    padding: 10px;
+  }
+
+  .card textarea {
+    height: 4em;
+  }
+}
+@media (max-width: 376px) {
+  .title {
+    font-size: 20px;
+  }
+}

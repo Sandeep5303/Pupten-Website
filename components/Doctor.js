@@ -15,14 +15,16 @@ export default function Doctor({ doctor, active, onClick }) {
         width='100px'
       ></Image>
       <p>
-        <span>{doctor.name}</span>
-        <br></br>
-        {doctor.degree}
-        <br></br>
-        {doctor.exp}
-        <br></br>
-        {doctor.location}
-        <br></br>
+        {doctor.name}
+        <span>
+          <br></br>
+          {doctor.degree}
+          <br></br>
+          {doctor.exp}
+          <br></br>
+          {doctor.location}
+          <br></br>
+        </span>
       </p>
       <button className='btn btn-dark'>More Info</button>
     </div>

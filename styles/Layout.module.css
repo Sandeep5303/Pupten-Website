@@ -6,3 +6,15 @@
   max-width: 960px;
   padding: 0 30px;
 }
+
+@media (max-height: 582px) {
+  .container {
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    margin: 10px auto;
+  }
+}

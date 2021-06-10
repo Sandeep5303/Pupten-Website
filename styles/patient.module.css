@@ -42,3 +42,29 @@
   padding: 10px;
   flex: 1;
 }
+
+@media (max-height: 582px) {
+  .card {
+    height: 300px;
+  }
+
+  .card .petContainer {
+    padding: 10px;
+  }
+
+  .card .petContainer:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .title {
+    font-size: 20px;
+  }
+  .card {
+    justify-content: space-around;
+  }
+  .card .petContainer {
+    padding: 10px;
+  }
+}

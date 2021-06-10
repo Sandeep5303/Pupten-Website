@@ -22,21 +22,21 @@ const details = ({ pupten: { current } }) => {
         <div className={styles.petContainer}>
           <Image
             className={styles.petImage}
-            src={pet && pet.imgUrl}
+            src={pet.imgUrl}
             height='100px'
             width='100px'
           ></Image>
           <p>
-            {pet && pet.name} ({pet && pet.type})
+            {pet.name} ({pet.type})
           </p>
         </div>
         <div className={styles.date}>
           <label htmlFor='date'>Date:</label>
-          <p>{date && date}</p>
+          <p>{date}</p>
         </div>
         <div className={styles.time}>
           <label htmlFor='time'>Time:</label>
-          <p>{time && time}</p>
+          <p>{time}</p>
         </div>
         <div className={styles.reason}>
           <label htmlFor='reason'>Reason:</label>

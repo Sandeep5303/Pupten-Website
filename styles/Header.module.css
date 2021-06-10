@@ -44,3 +44,35 @@
   padding-left: 10px;
   font-size: 20px;
 }
+
+@media (max-width: 376px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+  }
+
+  .logo {
+    font-size: 30px;
+    color: #009b91;
+  }
+
+  .menu_links {
+    height: auto;
+  }
+
+  .menu_links ul {
+    height: auto;
+  }
+
+  .menu_links ul li {
+    height: auto;
+    display: inline;
+    padding: 0 20px;
+  }
+
+  .profile_text {
+    padding-left: 10px;
+    font-size: 15px;
+  }
+}

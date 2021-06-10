@@ -54,16 +54,52 @@
 }
 
 .card .docContainer p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.card .docContainer p span {
   font-size: 15px;
   padding: 10px;
   flex: 1;
 }
 
-.card .docContainer p span {
-  font-size: 20px;
-  font-weight: 500;
-}
-
 .card .docContainer button {
   font-size: 15px;
+}
+
+@media (max-height: 582px) {
+  .card {
+    height: 300px;
+  }
+
+  .card .docContainer {
+    padding: 10px;
+  }
+
+  .card .docContainer:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .title {
+    font-size: 20px;
+  }
+  .card {
+    justify-content: space-around;
+  }
+  .card .docContainer {
+    padding: 10px;
+  }
+  .card .docContainer p {
+    padding-left: 10px;
+    font-size: 15px;
+  }
+  .card .docContainer p span {
+    display: none;
+  }
+  .card .docContainer button {
+    font-size: 10px;
+  }
 }

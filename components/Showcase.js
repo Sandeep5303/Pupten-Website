@@ -115,9 +115,6 @@ export default function Showcase() {
             Book a Vet
           </a>
         </Link>
-        {/* <button >
-          <Link href='/book'>Book a Vet</Link>
-        </button> */}
       </div>
 
       <div ref={petsRef} className={styles.pets}>
@@ -134,40 +131,40 @@ export default function Showcase() {
             <Image
               className={styles.pet_img}
               src='/img/user_pets/pet1.jpg'
-              width='100px'
-              height='100px'
+              width='80px'
+              height='80px'
             ></Image>
           </li>
           <li ref={petsCircle2Ref} className={styles.layer} data-depth='-.3'>
             <Image
               className={styles.pet_img}
               src='/img/user_pets/pet2.jpg'
-              width='100px'
-              height='100px'
+              width='80px'
+              height='80px'
             ></Image>
           </li>
           <li ref={petsCircle3Ref} className={styles.layer} data-depth='-.5'>
             <Image
               className={styles.pet_img}
               src='/img/user_pets/pet3.jpg'
-              width='100px'
-              height='100px'
+              width='80px'
+              height='80px'
             ></Image>
           </li>
           <li ref={petsCircle4Ref} className={styles.layer} data-depth='.3'>
             <Image
               className={styles.pet_img}
               src='/img/user_pets/pet4.jpg'
-              width='100px'
-              height='100px'
+              width='80px'
+              height='80px'
             ></Image>
           </li>
           <li ref={petsCircle5Ref} className={styles.layer} data-depth='.1'>
             <Image
               className={styles.pet_img}
               src='/img/user_pets/pet5.jpg'
-              width='100px'
-              height='100px'
+              width='80px'
+              height='80px'
             ></Image>
           </li>
         </ul>
