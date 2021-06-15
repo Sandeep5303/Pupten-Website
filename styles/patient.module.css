@@ -61,7 +61,7 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 500px) {
   .title {
     font-size: 20px;
   }
